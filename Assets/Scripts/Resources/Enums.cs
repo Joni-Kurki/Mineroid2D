@@ -18,4 +18,20 @@ public class Enums {
         Horizontal = 0,
         Vertical = 1,
     }
+
+    public enum MapChunkBiodome {
+        warm = 0,
+        cold = 1,
+        alien = 2,
+        fossil = 3,
+        random = 4,
+    }
+
+    public enum MapChunkWealth {
+        poorAsFuck = 0,
+        poor = 1,
+        normal = 2,
+        high = 3,
+        wealthy = 4,
+    }
 }

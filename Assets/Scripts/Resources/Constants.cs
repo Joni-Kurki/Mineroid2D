@@ -25,6 +25,11 @@ public class Constants {
         public const int MEDIUM = 10;
     }
 
+    public class IntMapTiers {
+        public const int MIN_TIER = 1;
+        public const int MAX_TIER = 5;
+    }
+
     public class Loot_Pooler {
         public const int MAX_EXTRA_SMALL = 100;
     }

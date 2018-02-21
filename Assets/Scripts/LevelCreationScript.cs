@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WorldCreationScript : MonoBehaviour {
+public class LevelCreationScript : MonoBehaviour {
 
     CreateLevel _levelCreator;
     public GameObject groundDirtPrefab;
