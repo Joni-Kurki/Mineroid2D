@@ -19,6 +19,11 @@ public class Constants {
         public const string GENERIC_GEM_NAME = "loot_gem(Clone)";
     }
 
+    public class MapPropertiesCount {
+        public const int NUMBER_OF_MAPSIZES = 3;
+        public const int NUMBER_OF_ORIENTATIONS = 2;
+    }
+
     public class IntMapSize {
         public const int EXTRA_SMALL = 3;
         public const int SMALL = 6;

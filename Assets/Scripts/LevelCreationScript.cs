@@ -23,9 +23,47 @@ public class LevelCreationScript : MonoBehaviour {
 
     public void InitLevel() {
         Debug.Log("Loaded level with " + SceneChangeHelper._mapSize + " and " + SceneChangeHelper._mapOrientation);
+
         _levelCreator = new CreateLevel(0, 0, SceneChangeHelper._mapSize , SceneChangeHelper._mapOrientation);
 
+        var pXInit = 0;
+        var pYInit = 10;
+
+        var go = GameObject.FindGameObjectWithTag("Player");
+
+        go.transform.Translate(GetPlayerSpawnX(SceneChangeHelper._mapSize, SceneChangeHelper._mapOrientation));
+
+        Debug.Log(go.name + "( "+go.transform.position+" )");
+
         UnpackAndInstantiateChunks();
+    }
+
+    Vector3 GetPlayerSpawnX(Enums.MapSize mSize, Enums.MapOrientation mOr) {
+        switch (mSize) {
+            case Enums.MapSize.EXTRA_SMALL:
+                if(mOr == Enums.MapOrientation.Horizontal)
+                    return new Vector2((Constants.Chunk.CHUNK_X * Constants.IntMapSize.EXTRA_SMALL) / 2 , 
+                        Constants.Chunk.CHUNK_Y + 1 );
+                else
+                    return new Vector2((Constants.Chunk.CHUNK_X * 1) / 2, 
+                        Constants.Chunk.CHUNK_Y * Constants.IntMapSize.EXTRA_SMALL + 1);
+            case Enums.MapSize.SMALL:
+                if (mOr == Enums.MapOrientation.Horizontal)
+                    return new Vector2((Constants.Chunk.CHUNK_X * (Constants.IntMapSize.SMALL / 2)) / 2 , 
+                        (Constants.Chunk.CHUNK_Y * 2) + 1 );
+                else
+                    return new Vector2((Constants.Chunk.CHUNK_X * 2) / 2, 
+                        Constants.Chunk.CHUNK_Y * (Constants.IntMapSize.SMALL / 2) + 1);
+            case Enums.MapSize.MEDIUM:
+                if (mOr == Enums.MapOrientation.Horizontal)
+                    return new Vector2((Constants.Chunk.CHUNK_X * (Constants.IntMapSize.MEDIUM / 5)) / 2,
+                        (Constants.Chunk.CHUNK_Y * 3) + 1);
+                else
+                    return new Vector2((Constants.Chunk.CHUNK_X * 3) / 2,
+                        Constants.Chunk.CHUNK_Y * (Constants.IntMapSize.MEDIUM / 5) + 1);
+            default:
+                return new Vector2(0, 0);
+        }
     }
 
     void UnpackAndInstantiateChunks() {
