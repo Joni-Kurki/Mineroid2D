@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/_scenes/2DMapSelectionScene.unity
+- path: Assets/_scenes/2DLevelScene.unity
   isLoaded: 1
   isActive: 1

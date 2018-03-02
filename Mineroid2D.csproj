@@ -82,12 +82,16 @@
     <Compile Include="Assets\Scripts\CharMineScript.cs" />
     <Compile Include="Assets\Scripts\CharMoverScript.cs" />
     <Compile Include="Assets\Scripts\ChunkCreator.cs" />
+    <Compile Include="Assets\Scripts\CloudScript.cs" />
     <Compile Include="Assets\Scripts\CreateLevel.cs" />
     <Compile Include="Assets\Scripts\DestroyedTileScript.cs" />
+    <Compile Include="Assets\Scripts\LevelCreationScript.cs" />
     <Compile Include="Assets\Scripts\LootManagerScript.cs" />
     <Compile Include="Assets\Scripts\LootPickupScript.cs" />
     <Compile Include="Assets\Scripts\LootPoolerScript.cs" />
     <Compile Include="Assets\Scripts\Loot_GemScript.cs" />
+    <Compile Include="Assets\Scripts\MapChunkScript.cs" />
+    <Compile Include="Assets\Scripts\MapData.cs" />
     <Compile Include="Assets\Scripts\MouseAimScript.cs" />
     <Compile Include="Assets\Scripts\PlayerUIScript.cs" />
     <Compile Include="Assets\Scripts\Resources\Constants.cs" />
@@ -95,7 +99,7 @@
     <Compile Include="Assets\Scripts\TileControllerScript.cs" />
     <Compile Include="Assets\Scripts\TileData.cs" />
     <Compile Include="Assets\Scripts\TileSpriteSwapperScript.cs" />
-    <Compile Include="Assets\Scripts\WorldCreationScript.cs" />
+    <Compile Include="Assets\Scripts\WorldMapCreatorScript.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
