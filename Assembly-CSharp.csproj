@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\CharMineScript.cs" />
      <Compile Include="Assets\Scripts\CharMoverScript.cs" />
      <Compile Include="Assets\Scripts\ChunkCreator.cs" />
+     <Compile Include="Assets\Scripts\CloudScript.cs" />
      <Compile Include="Assets\Scripts\CreateLevel.cs" />
      <Compile Include="Assets\Scripts\DestroyedTileScript.cs" />
      <Compile Include="Assets\Scripts\LevelCreationScript.cs" />
@@ -63,6 +64,7 @@
      <Compile Include="Assets\Scripts\PlayerUIScript.cs" />
      <Compile Include="Assets\Scripts\Resources\Constants.cs" />
      <Compile Include="Assets\Scripts\Resources\Enums.cs" />
+     <Compile Include="Assets\Scripts\SceneChangeHelper.cs" />
      <Compile Include="Assets\Scripts\TileControllerScript.cs" />
      <Compile Include="Assets\Scripts\TileData.cs" />
      <Compile Include="Assets\Scripts\TileSpriteSwapperScript.cs" />

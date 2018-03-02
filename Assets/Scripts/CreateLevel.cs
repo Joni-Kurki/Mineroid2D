@@ -13,7 +13,7 @@ public class CreateLevel {
     public Chunk [] _chunks;
 
 	public CreateLevel(int h, int w, Enums.MapSize mapSize, Enums.MapOrientation mapOrientation) {
-        Debug.Log("CreateLevel constructor");
+        //Debug.Log("CreateLevel constructor");
         _h = h;
         _w = w;
         _mapSize = mapSize;
@@ -123,7 +123,7 @@ public class Chunk {
     public Tile[,] _tiles;
     
     public Chunk(int x, int y) {
-        Debug.Log(">>Chunk constructor");
+        //Debug.Log(">>Chunk constructor");
         _x = x;
         _y = y;
         _tiles = new Tile[Constants.Chunk.CHUNK_X, Constants.Chunk.CHUNK_Y];
@@ -150,7 +150,7 @@ public class Tile {
     public int _depth;
 
     public Tile(int x, int y, Enums.GroundTileType type) {
-        Debug.Log(">> >>Tile constructor");
+        //Debug.Log(">> >>Tile constructor");
         _x = x;
         _y = y;
         _tileType = type;

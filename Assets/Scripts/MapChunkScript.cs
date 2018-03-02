@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class MapChunkScript : MonoBehaviour {
@@ -7,23 +8,26 @@ public class MapChunkScript : MonoBehaviour {
     public int x;
     public int y;
     public int tier;
-    public Enums.MapChunkWealth mapWealth;
-    public Enums.MapChunkBiodome mapBiodome;
+    public Enums.MapSize _mapSize;
+    public Enums.MapOrientation _mapOrientation;
+    public Enums.MapChunkWealth _mapWealth;
+    public Enums.MapChunkBiodome _mapBiodome;
     SpriteRenderer renderer;
     public Material materialToUse;
-    Material originalMaterial;
+    Color originalMaterial;
 	// Use this for initialization
 	void Start () {
-        renderer = GetComponent<SpriteRenderer>();
-		
+        renderer = GetComponent<SpriteRenderer>();		
 	}
 
     public void SetMapChunk(MapChunk mapChunk) {
         x = mapChunk._x;
         y = mapChunk._y;
         tier = mapChunk._tier;
-        mapWealth = mapChunk._mapWealth;
-        mapBiodome = mapChunk._mapBiodome;
+        _mapWealth = mapChunk._mapWealth;
+        _mapBiodome = mapChunk._mapBiodome;
+        _mapSize = mapChunk._mapSize;
+        _mapOrientation = mapChunk._mapOrientation;
     }
 
 	// Update is called once per frame
@@ -32,12 +36,24 @@ public class MapChunkScript : MonoBehaviour {
 	}
 
     void OnMouseEnter() {
-        originalMaterial = renderer.material;
+        originalMaterial = renderer.material.color;
         renderer.material.color = new Color(255, 0, 0);
     }
 
     void OnMouseExit() {
-        renderer.material = originalMaterial;
+        renderer.material.color = originalMaterial;
+    }
+
+    void OnMouseDown() {
+        Debug.Log("Clicked "+gameObject.name);
+        Debug.Log("Maptier "+tier);
+
+        SceneChangeHelper._mapSize = _mapSize;
+        SceneChangeHelper._mapOrientation = _mapOrientation;
+        SceneChangeHelper._mapBiodome = _mapBiodome;
+        SceneChangeHelper._mapWealth = _mapWealth;
+
+        SceneManager.LoadScene("2DLevelScene", LoadSceneMode.Single);
     }
 
 }

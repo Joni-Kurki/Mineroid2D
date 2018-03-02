@@ -53,8 +53,13 @@ public class MapChunk {
     public int _tier;
     public Enums.MapChunkBiodome _mapBiodome;
     public Enums.MapChunkWealth _mapWealth;
+    public Enums.MapSize _mapSize;
+    public Enums.MapOrientation _mapOrientation;
 
-    public MapChunk(int x, int y, int tier, Enums.MapChunkBiodome biodome = Enums.MapChunkBiodome.random, 
+    public MapChunk(int x, int y, int tier, 
+        Enums.MapSize mapSize = Enums.MapSize.SMALL, 
+        Enums.MapOrientation mapOrientation = Enums.MapOrientation.Vertical,
+        Enums.MapChunkBiodome biodome = Enums.MapChunkBiodome.random, 
         Enums.MapChunkWealth mapWealth = Enums.MapChunkWealth.poorAsFuck) {
         _x = x;
         _y = y;
@@ -67,6 +72,9 @@ public class MapChunk {
         } else
             _mapBiodome = biodome; 
         _mapWealth = mapWealth;
+
+        _mapSize = mapSize;
+        _mapOrientation = mapOrientation;
 
         Debug.Log("Created (" + _x + " | " + _y + ") T:" + _tier + " with biodome: " + _mapBiodome + " wealth: " + _mapWealth);
     }

@@ -17,11 +17,17 @@ public class LevelCreationScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        _levelCreator = new CreateLevel(0, 0, mapSize, mapOrientation);
+        InitLevel();
+    }
+
+
+    public void InitLevel() {
+        Debug.Log("Loaded level with " + SceneChangeHelper._mapSize + " and " + SceneChangeHelper._mapOrientation);
+        _levelCreator = new CreateLevel(0, 0, SceneChangeHelper._mapSize , SceneChangeHelper._mapOrientation);
 
         UnpackAndInstantiateChunks();
     }
-	
+
     void UnpackAndInstantiateChunks() {
         // CHUNK
         for(var i = 0; i < _levelCreator._chunks.Length; i++) {

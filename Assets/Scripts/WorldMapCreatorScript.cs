@@ -25,7 +25,7 @@ public class WorldMapCreatorScript : MonoBehaviour {
                 y++;
             }
 
-            MapChunk mChunk = new MapChunk(x, y, 0);
+            MapChunk mChunk = new MapChunk(x, y, 0, Enums.MapSize.MEDIUM);
 
             var go = Instantiate(MapPiecePrefab, new Vector2(x * 2, y * 2), MapPiecePrefab.transform.rotation, transform);
             go.name = "MapChunk_" + x + "_" + y;
