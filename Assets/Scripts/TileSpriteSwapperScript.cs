@@ -5,12 +5,19 @@ using UnityEngine;
 public class TileSpriteSwapperScript : MonoBehaviour {
 
     public Sprite [] dirtSpriteAtlas;
+    public Sprite [] coldSpriteAtlas;
+
+    public Sprite[] atlasToUse;
+
     SpriteRenderer render;
 
 	// Use this for initialization
 	void Awake () {
         render = GetComponent<SpriteRenderer>();
-        render.sprite = dirtSpriteAtlas[0];
+
+        atlasToUse = coldSpriteAtlas;
+
+        render.sprite = atlasToUse[0];
 	}
 	
 	// Update is called once per frame
@@ -18,7 +25,11 @@ public class TileSpriteSwapperScript : MonoBehaviour {
 		
 	}
 
+    public void SetAtlasToUse() {
+
+    }
+
     public void SetSprite(int index) {
-        render.sprite = dirtSpriteAtlas[index];
+        render.sprite = atlasToUse[index];
     }
 }

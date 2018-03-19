@@ -66,5 +66,15 @@ public class Constants {
             public const int DIRT_NORMAL_VAR_1 = 2;
             public const int DIRT_NORMAL_VAR_2 = 3;
         }
+
+        public class TileColdAtlas {
+            public const int NUMBER_OF_NORMAL_VARS = 3;
+            public static readonly int[] NORMAL_VAR_INDEX = { 0, 2, 3 };
+
+            public const int COLD_NORMAL_VAR_0 = 0;
+            public const int COLD_TOP_ICE_VAR_0 = 1;
+            public const int COLD_NORMAL_VAR_1 = 2;
+            public const int COLD_NORMAL_VAR_2 = 3;
+        }
     }
 }

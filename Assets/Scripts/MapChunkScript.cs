@@ -15,6 +15,7 @@ public class MapChunkScript : MonoBehaviour {
     SpriteRenderer renderer;
     public Material materialToUse;
     Color originalMaterial;
+
 	// Use this for initialization
 	void Start () {
         renderer = GetComponent<SpriteRenderer>();		
@@ -37,11 +38,25 @@ public class MapChunkScript : MonoBehaviour {
 
     void OnMouseEnter() {
         originalMaterial = renderer.material.color;
-        renderer.material.color = new Color(255, 0, 0);
+        renderer.material.color = GetColorForChunk();
     }
 
     void OnMouseExit() {
         renderer.material.color = originalMaterial;
+    }
+
+    Color GetColorForChunk() {
+        switch (_mapBiodome) {
+            case Enums.MapChunkBiodome.warm:
+                return new Color(255, 0, 0);
+            case Enums.MapChunkBiodome.cold:
+                return new Color(0, 0, 255);
+            case Enums.MapChunkBiodome.fossil:
+                return new Color(0, 255, 255);
+            case Enums.MapChunkBiodome.alien:
+                return new Color(128, 128, 0);
+        }
+        return new Color(0, 0, 0);
     }
 
     void OnMouseDown() {

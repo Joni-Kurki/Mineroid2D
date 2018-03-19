@@ -34,4 +34,9 @@ public class Enums {
         high = 3,
         wealthy = 4,
     }
+
+    public enum AtlasTileset {
+        dirt = 0,
+        cold = 1,
+    }
 }
