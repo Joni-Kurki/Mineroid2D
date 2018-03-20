@@ -89,6 +89,8 @@ public class LevelCreationScript : MonoBehaviour {
 
                         // asetetaan tilelle sprite
                         TileSpriteSwapperScript tsss = go.GetComponent<TileSpriteSwapperScript>();
+                        tsss.SetAtlasToUse(SceneChangeHelper._mapBiodome);
+                        // TODO: tänne sitten muutkin tileset määrittelyt
                         tsss.SetSprite(GetRandomTileVariationForGroundDirt());
 
                         // Jos päälimmäinen kerros

@@ -76,5 +76,25 @@ public class Constants {
             public const int COLD_NORMAL_VAR_1 = 2;
             public const int COLD_NORMAL_VAR_2 = 3;
         }
+
+        public class TileAlienAtlas {
+            public const int NUMBER_OF_NORMAL_VARS = 3;
+            public static readonly int[] NORMAL_VAR_INDEX = { 0, 2, 3 };
+
+            public const int ALIEN_NORMAL_VAR_0 = 0;
+            public const int ALIEN_TOP_ICE_VAR_0 = 1;
+            public const int ALIEN_NORMAL_VAR_1 = 2;
+            public const int ALIEN_NORMAL_VAR_2 = 3;
+        }
+
+        public class TileFossiltAtlas {
+            public const int NUMBER_OF_NORMAL_VARS = 3;
+            public static readonly int[] NORMAL_VAR_INDEX = { 0, 2, 3 };
+
+            public const int FOSSIL_NORMAL_VAR_0 = 0;
+            public const int FOSSIL_TOP_MOSS_VAR_0 = 1;
+            public const int FOSSIL_NORMAL_VAR_1 = 2;
+            public const int FOSSIL_NORMAL_VAR_2 = 3;
+        }
     }
 }
