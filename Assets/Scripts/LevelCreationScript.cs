@@ -56,11 +56,11 @@ public class LevelCreationScript : MonoBehaviour {
                         Constants.Chunk.CHUNK_Y * (Constants.IntMapSize.SMALL / 2) + 1);
             case Enums.MapSize.MEDIUM:
                 if (mOr == Enums.MapOrientation.Horizontal)
-                    return new Vector2((Constants.Chunk.CHUNK_X * (Constants.IntMapSize.MEDIUM / 5)) / 2,
-                        (Constants.Chunk.CHUNK_Y * 3) + 1);
+                    return new Vector2((Constants.Chunk.CHUNK_X * (Constants.IntMapSize.MEDIUM / 2)) / 2,
+                        (Constants.Chunk.CHUNK_Y * 2) + 1);
                 else
-                    return new Vector2((Constants.Chunk.CHUNK_X * 3) / 2,
-                        Constants.Chunk.CHUNK_Y * (Constants.IntMapSize.MEDIUM / 5) + 1);
+                    return new Vector2((Constants.Chunk.CHUNK_X * 2) / 2,
+                        Constants.Chunk.CHUNK_Y * (Constants.IntMapSize.MEDIUM / 2) + 1);
             default:
                 return new Vector2(0, 0);
         }
