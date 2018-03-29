@@ -50,6 +50,13 @@ public class Constants {
         public const int CHUNK_OFFSET = 10;
     }
 
+    public class MapIconAtlasConstants {
+        public const int SCROLL_INDEX = 0;
+        public const int S_INDEX = 1;
+        public const int X_INDEX = 2;
+        public const int M_INDEX = 3;
+    }
+
     public class TileConstants {
         public const float TILE_DIRT_MULTIPLIER = 1.15f;
         public const int TILE_DIRT_BASE_HP = 20;

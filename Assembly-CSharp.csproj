@@ -60,6 +60,8 @@
      <Compile Include="Assets\Scripts\Loot_GemScript.cs" />
      <Compile Include="Assets\Scripts\MapChunkScript.cs" />
      <Compile Include="Assets\Scripts\MapData.cs" />
+     <Compile Include="Assets\Scripts\MapIconScript.cs" />
+     <Compile Include="Assets\Scripts\MapIconSpriteSwapperScript.cs" />
      <Compile Include="Assets\Scripts\MouseAimScript.cs" />
      <Compile Include="Assets\Scripts\PlayerUIScript.cs" />
      <Compile Include="Assets\Scripts\Resources\Constants.cs" />
