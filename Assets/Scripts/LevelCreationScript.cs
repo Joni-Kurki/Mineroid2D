@@ -26,9 +26,6 @@ public class LevelCreationScript : MonoBehaviour {
 
         _levelCreator = new CreateLevel(0, 0, SceneChangeHelper._mapSize , SceneChangeHelper._mapOrientation);
 
-        var pXInit = 0;
-        var pYInit = 10;
-
         var go = GameObject.FindGameObjectWithTag("Player");
 
         go.transform.Translate(GetPlayerSpawnX(SceneChangeHelper._mapSize, SceneChangeHelper._mapOrientation));
@@ -38,6 +35,7 @@ public class LevelCreationScript : MonoBehaviour {
         UnpackAndInstantiateChunks();
     }
 
+    // Returns place where player is supposet to be moved after map has been created
     Vector3 GetPlayerSpawnX(Enums.MapSize mSize, Enums.MapOrientation mOr) {
         switch (mSize) {
             case Enums.MapSize.EXTRA_SMALL:

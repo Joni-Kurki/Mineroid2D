@@ -16,6 +16,11 @@ public class MapChunkScript : MonoBehaviour {
     public Material materialToUse;
     Color originalMaterial;
 
+    public GameObject mapIconContainerPrefab;
+
+    bool _isInit = false;
+    bool _mapIconIsInstantiated = false;
+
 	// Use this for initialization
 	void Start () {
         renderer = GetComponent<SpriteRenderer>();		
@@ -33,7 +38,16 @@ public class MapChunkScript : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+        // If we havent Instantiated mapIcon && mapIcon is not yet set.
+        if (!_mapIconIsInstantiated && !_isInit) {
+            var go = Instantiate(mapIconContainerPrefab, transform);
+
+            _mapIconIsInstantiated = true;
+            var misss = go.GetComponent<MapIconSpriteSwapperScript>();
+            misss.InitIcon(_mapSize);
+
+            _isInit = true;
+        }
 	}
 
     void OnMouseEnter() {

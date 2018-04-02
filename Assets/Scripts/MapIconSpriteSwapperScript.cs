@@ -15,7 +15,7 @@ public class MapIconSpriteSwapperScript : MonoBehaviour {
         
 	}
 
-    void InitIcon(Enums.MapSize mapSize){
+    public void InitIcon(Enums.MapSize mapSize){
         _mapSize = mapSize;
         _initDone = true;
     }
@@ -30,29 +30,29 @@ public class MapIconSpriteSwapperScript : MonoBehaviour {
 
         switch (_mapSize) {
             case Enums.MapSize.EXTRA_SMALL:
-                var goxs1 = Instantiate(mapIconPrefab, transform);
-                goxs1.name = "MapIcon_X";
-                SpriteRenderer srxs1 = goxs1.GetComponent<SpriteRenderer>();
-                srxs1.sprite = spriteAtlas[Constants.MapIconAtlasConstants.X_INDEX];
+                go = Instantiate(mapIconPrefab, transform);
+                go.name = "MapIcon_X";
+                sr = go.GetComponent<SpriteRenderer>();
+                sr.sprite = spriteAtlas[Constants.MapIconAtlasConstants.X_INDEX];
 
-                var goxs = Instantiate(mapIconPrefab, transform);
-                goxs.name = "MapIcon_S";
-                srxs1 = goxs.GetComponent<SpriteRenderer>();
-                srxs1.sprite = spriteAtlas[Constants.MapIconAtlasConstants.S_INDEX];
+                go = Instantiate(mapIconPrefab, transform);
+                go.name = "MapIcon_S";
+                sr = go.GetComponent<SpriteRenderer>();
+                sr.sprite = spriteAtlas[Constants.MapIconAtlasConstants.S_INDEX];
                 _instantiated = true;
                 break;
             case Enums.MapSize.SMALL:
-                var gos = Instantiate(mapIconPrefab, transform);
-                gos.name = "MapIcon_S";
-                SpriteRenderer srs = gos.GetComponent<SpriteRenderer>();
-                srs.sprite = spriteAtlas[Constants.MapIconAtlasConstants.S_INDEX];
+                go = Instantiate(mapIconPrefab, transform);
+                go.name = "MapIcon_S";
+                sr = go.GetComponent<SpriteRenderer>();
+                sr.sprite = spriteAtlas[Constants.MapIconAtlasConstants.S_INDEX];
                 _instantiated = true;
                 break;
             case Enums.MapSize.MEDIUM:
-                var gom = Instantiate(mapIconPrefab, transform);
-                gom.name = "MapIcon_M";
-                SpriteRenderer srm = gom.GetComponent<SpriteRenderer>();
-                srm.sprite = spriteAtlas[Constants.MapIconAtlasConstants.S_INDEX];
+                go = Instantiate(mapIconPrefab, transform);
+                go.name = "MapIcon_M";
+                sr = go.GetComponent<SpriteRenderer>();
+                sr.sprite = spriteAtlas[Constants.MapIconAtlasConstants.M_INDEX];
                 _instantiated = true;
                 break;
         }

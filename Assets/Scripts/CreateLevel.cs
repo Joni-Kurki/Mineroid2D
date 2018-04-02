@@ -123,7 +123,6 @@ public class Chunk {
     public Tile[,] _tiles;
     
     public Chunk(int x, int y) {
-        //Debug.Log(">>Chunk constructor");
         _x = x;
         _y = y;
         _tiles = new Tile[Constants.Chunk.CHUNK_X, Constants.Chunk.CHUNK_Y];
@@ -150,7 +149,6 @@ public class Tile {
     public int _depth;
 
     public Tile(int x, int y, Enums.GroundTileType type) {
-        //Debug.Log(">> >>Tile constructor");
         _x = x;
         _y = y;
         _tileType = type;
