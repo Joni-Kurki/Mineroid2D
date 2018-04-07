@@ -32,7 +32,6 @@ public class ChunkCreator : MonoBehaviour {
                     tcs.tile = new TileType(true, yPos, h);
                     tcs.tile._tileHP = 2;
                     tcs.initTile();
-                    //Debug.Log(tcs.tile.getTileHp());
                 }else if(chunkData.getTileAt(xPos, yPos).getTile() == TileType.TileTypes.obstacle) {
                     var go = Instantiate(tilePrefabRock, new Vector2(x + xPos, y + yPos), tilePrefabRock.transform.rotation, transform);
                     TileControllerScript tcs = go.GetComponent<TileControllerScript>();

@@ -34,7 +34,7 @@ public class MapData {
             tierToAdd = Random.Range(Constants.IntMapTiers.MIN_TIER, Constants.IntMapTiers.MAX_TIER);
         }
 
-        _mapChunks.Add(new MapChunk(0, 0, tier));
+        _mapChunks.Add(new MapChunk(0, 0, tier, true));
     }
 
     public MapChunk GetMapChunk(int index) {
@@ -77,5 +77,35 @@ public class MapChunk {
         _mapOrientation = mapOrientation;
 
         Debug.Log("Created (" + _x + " | " + _y + ") T:" + _tier + " with biodome: " + _mapBiodome + " wealth: " + _mapWealth);
+    }
+
+    public MapChunk(int x, int y, int tier,
+        bool randomSize = true,
+        Enums.MapChunkBiodome biodome = Enums.MapChunkBiodome.random,
+        Enums.MapChunkWealth mapWealth = Enums.MapChunkWealth.poorAsFuck) {
+        _x = x;
+        _y = y;
+        _tier = tier;
+        if (biodome == Enums.MapChunkBiodome.random) {
+            int r = Random.Range(0, 4);
+            Debug.Log("Roll " + r);
+
+            _mapBiodome = (Enums.MapChunkBiodome)r;
+        } else
+            _mapBiodome = biodome;
+        _mapWealth = mapWealth;
+
+        _mapSize = (Enums.MapSize)getRandomSize();
+        _mapOrientation = (Enums.MapOrientation)getRandomMapOrientation();
+
+        Debug.Log("Created (" + _x + " | " + _y + ") T:" + _tier + " with biodome: " + _mapBiodome + " wealth: " + _mapWealth);
+    }
+
+    int getRandomSize() {
+        return Random.Range(0, Constants.MapPropertiesCount.NUMBER_OF_MAPSIZES);
+    }
+
+    int getRandomMapOrientation() {
+        return Random.Range(0, Constants.MapPropertiesCount.NUMBER_OF_ORIENTATIONS);
     }
 }

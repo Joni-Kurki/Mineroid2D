@@ -24,10 +24,44 @@ public class Constants {
         public const int NUMBER_OF_ORIENTATIONS = 2;
     }
 
-    public class IntMapSize {
+    public class MapSizeConstants {
         public const int EXTRA_SMALL = 3;
         public const int SMALL = 6;
         public const int MEDIUM = 10;
+
+        // MapSize 3x1 and 1x3 -> 3 chunks
+        public class Dimensions_ExtraSmall {
+            public class Horizontal {
+                public const int X = 3;
+                public const int Y = 1;
+            }
+            public class Vertical {
+                public const int X = 1;
+                public const int Y = 3;
+            }
+        }
+        // MapSize 3x2 and 2x3 -> 6 chunks
+        public class Dimensions_Small {
+            public class Horizontal {
+                public const int X = 3;
+                public const int Y = 2;
+            }
+            public class Vertical {
+                public const int X = 2;
+                public const int Y = 3;
+            }
+        }
+        // MapSize 5x2 and 2x5 -> 10 chunks
+        public class Dimensions_Medium {
+            public class Horizontal {
+                public const int X = 5;
+                public const int Y = 2;
+            }
+            public class Vertical {
+                public const int X = 2;
+                public const int Y = 5;
+            }
+        }
     }
 
     public class IntMapTiers {

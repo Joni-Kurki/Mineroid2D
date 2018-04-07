@@ -12,6 +12,7 @@ public class TileSpriteSwapperScript : MonoBehaviour {
     public Sprite [] coldSpriteAtlas;
     public Sprite [] fossilSpriteAtlas;
     public Sprite [] alienSpriteAtlas;
+    public Sprite [] miscAtlas;
 
     public Sprite [] _atlasToUse;
 
@@ -46,6 +47,11 @@ public class TileSpriteSwapperScript : MonoBehaviour {
     // Asettaa käytettävän sprite atlaksesta 
     public void SetSprite(int index) {
         render.sprite = _atlasToUse[index];
+    }
+
+    // Asetetaan Misc atlas käyttöön, ei mene biodomen mukaan.
+    public void SetSpriteToBoundry() {
+        _atlasToUse = miscAtlas; 
     }
 
     // Update is called once per frame

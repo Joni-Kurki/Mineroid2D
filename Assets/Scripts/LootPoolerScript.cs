@@ -26,7 +26,7 @@ public class LootPoolerScript : MonoBehaviour {
         var prefabCount = GetHowManyGemPrefabAreUsed(mapTier);
 
         switch (mapSize) {
-            case Constants.IntMapSize.EXTRA_SMALL:
+            case Constants.MapSizeConstants.EXTRA_SMALL:
                 _maxNumberOfObjects = Constants.Loot_Pooler.MAX_EXTRA_SMALL;
 
                 for (var i = 0; i < _maxNumberOfObjects; i++) {
@@ -45,7 +45,7 @@ public class LootPoolerScript : MonoBehaviour {
         //lootIndecies = new int[prefabCount];
 
         switch (mapSize) {
-            case Constants.IntMapSize.EXTRA_SMALL:
+            case Constants.MapSizeConstants.EXTRA_SMALL:
                 _maxNumberOfObjects = Constants.Loot_Pooler.MAX_EXTRA_SMALL;
 
                 for (var j = 0; j < prefabCount; j++) {
