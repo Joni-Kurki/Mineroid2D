@@ -5,7 +5,6 @@ using UnityEngine;
 public class CameraFollowScript : MonoBehaviour {
 
     public GameObject cam;
-    public GameObject bg;
     public Vector3 offset;
 
 	// Use this for initialization
@@ -20,10 +19,10 @@ public class CameraFollowScript : MonoBehaviour {
             gameObject.transform.position.y + offset.y, 
             gameObject.transform.position.z + offset.z);
 
-        bg.transform.position = new Vector3(
-            gameObject.transform.position.x + offset.x,
-            gameObject.transform.position.y + offset.y,
-            gameObject.transform.position.z + offset.z);
+        //bg.transform.position = new Vector3(
+        //    gameObject.transform.position.x + offset.x,
+        //    gameObject.transform.position.y + offset.y,
+        //    gameObject.transform.position.z + offset.z);
 
     }
 }

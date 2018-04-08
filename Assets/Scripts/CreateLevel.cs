@@ -20,6 +20,11 @@ public class CreateLevel {
         _mapOrientation = mapOrientation;
         _chunks = new Chunk[getNumberOfChunks()];
         _wallChunks = new Chunk[getNumberOfWallChunks()];
+
+        //TODO DEBUGGING
+        //_mapOrientation = Enums.MapOrientation.Vertical;
+        //TODO
+
         InitChunks();
         CreateBoundaryWallChunks();
     }
@@ -106,8 +111,8 @@ public class CreateLevel {
     // Create wallchunks
     void CreateBoundaryWallChunks() {
         int noOfChunks = _wallChunks.Length;
-        int y = 0;
-        int x = 0;
+        var yOffsetCounter = 0;
+        var yRow = 0;
         Debug.Log("CreateBoundaryWallChunks: " + noOfChunks);
 
         switch (_mapSize) {
@@ -115,7 +120,7 @@ public class CreateLevel {
                 switch (_mapOrientation) {
                     case Enums.MapOrientation.Horizontal:
                         for(var i=0; i < noOfChunks; i++) {
-                            if (i < 3) {
+                            if (i < Constants.MapSizeConstants.Dimensions_ExtraSmall.Horizontal.X) {
                                 // First bottom
                                 _wallChunks[i] = new Chunk(i * Constants.Chunk.CHUNK_X, -2, true, true);
                             } else {
@@ -128,28 +133,115 @@ public class CreateLevel {
                         }
                         break;
                     case Enums.MapOrientation.Vertical:
+                        for (var i = 0; i < noOfChunks; i++) {
+                            if(i == 0) {
+                                _wallChunks[i] = new Chunk(0, -2, true, true);
+                            } else {
+                                if(yOffsetCounter % 2 == 0 && i != 1) {
+                                    yRow++;
+                                }
+                                var xOffset1 = -1;
+                                var xOffset2 = Constants.MapSizeConstants.Dimensions_ExtraSmall.Vertical.X * Constants.Chunk.CHUNK_X;
+                                var offsetToUse = i % 2 == 0 ? xOffset1 : xOffset2;
+                                _wallChunks[i] = new Chunk(offsetToUse, (yRow * Constants.Chunk.CHUNK_Y) - 1, true, true, true);
+
+                                yOffsetCounter++;
+
+                            }
+                        }
                         break;
                 }
                 break;
             case Enums.MapSize.SMALL:
                 switch (_mapOrientation) {
                     case Enums.MapOrientation.Horizontal:
+                        for (var i = 0; i < noOfChunks; i++) {
+                            if (i < Constants.MapSizeConstants.Dimensions_Small.Horizontal.X) {
+                                // First bottom
+                                _wallChunks[i] = new Chunk(i * Constants.Chunk.CHUNK_X, -2, true, true);
+                            } else {
+                                if(yOffsetCounter % 2 == 0 && i != (Constants.MapSizeConstants.Dimensions_Small.Horizontal.X )) {
+                                    yRow++;
+                                }
+
+                                // Then sides
+                                var xOffset1 = -1;
+                                var xOffset2 = Constants.MapSizeConstants.Dimensions_ExtraSmall.Horizontal.X * Constants.Chunk.CHUNK_X;
+                                var offsetToUse = i % 2 == 0 ? xOffset1 : xOffset2;
+
+                                _wallChunks[i] = new Chunk(offsetToUse, (yRow * Constants.Chunk.CHUNK_Y) -1, true, true, true);
+
+                                yOffsetCounter++;
+                            }
+                        }
                         break;
                     case Enums.MapOrientation.Vertical:
+                        for (var i = 0; i < noOfChunks; i++) {
+                            if (i < Constants.MapSizeConstants.Dimensions_Small.Vertical.X) {
+                                _wallChunks[i] = new Chunk(i * Constants.Chunk.CHUNK_X, -2, true, true);
+                            } else {
+                                if (yOffsetCounter % 2 == 0 && i != Constants.MapSizeConstants.Dimensions_Small.Vertical.X) {
+                                    yRow++;
+                                }
+                                var xOffset1 = -1;
+                                var xOffset2 = Constants.MapSizeConstants.Dimensions_Small.Vertical.X * Constants.Chunk.CHUNK_X;
+                                var offsetToUse = i % 2 == 0 ? xOffset1 : xOffset2;
+                                _wallChunks[i] = new Chunk(offsetToUse, (yRow * Constants.Chunk.CHUNK_Y) - 1, true, true, true);
+
+                                yOffsetCounter++;
+
+                            }
+                        }
                         break;
                 }
                 break;
             case Enums.MapSize.MEDIUM:
                 switch (_mapOrientation) {
                     case Enums.MapOrientation.Horizontal:
+                        for (var i = 0; i < noOfChunks; i++) {
+                            if (i < Constants.MapSizeConstants.Dimensions_Medium.Horizontal.X) {
+                                // First bottom
+                                _wallChunks[i] = new Chunk(i * Constants.Chunk.CHUNK_X, -2, true, true);
+                            } else {
+                                if (yOffsetCounter % 2 == 0 && i != (Constants.MapSizeConstants.Dimensions_Medium.Horizontal.X)) {
+                                    yRow++;
+                                }
+
+                                // Then sides
+                                var xOffset1 = -1;
+                                var xOffset2 = Constants.MapSizeConstants.Dimensions_Medium.Horizontal.X * Constants.Chunk.CHUNK_X;
+                                var offsetToUse = i % 2 == 0 ? xOffset1 : xOffset2;
+
+                                _wallChunks[i] = new Chunk(offsetToUse, (yRow * Constants.Chunk.CHUNK_Y) - 1, true, true, true);
+
+                                yOffsetCounter++;
+                            }
+                        }
                         break;
                     case Enums.MapOrientation.Vertical:
+                        for (var i = 0; i < noOfChunks; i++) {
+                            if (i < Constants.MapSizeConstants.Dimensions_Medium.Vertical.X) {
+                                _wallChunks[i] = new Chunk(i * Constants.Chunk.CHUNK_X, -2, true, true);
+                            } else {
+                                if (yOffsetCounter % 2 == 0 && i != Constants.MapSizeConstants.Dimensions_Medium.Vertical.X) {
+                                    yRow++;
+                                }
+                                var xOffset1 = -1;
+                                var xOffset2 = Constants.MapSizeConstants.Dimensions_Medium.Vertical.X * Constants.Chunk.CHUNK_X;
+                                var offsetToUse = i % 2 == 0 ? xOffset1 : xOffset2;
+                                _wallChunks[i] = new Chunk(offsetToUse, (yRow * Constants.Chunk.CHUNK_Y) - 1, true, true, true);
+
+                                yOffsetCounter++;
+
+                            }
+                        }
                         break;
                 }
                 break;
         }
     }
 
+    // Returns how many chunks are needed
     int getNumberOfChunks() {
         switch (_mapSize) {
             case Enums.MapSize.EXTRA_SMALL:
@@ -162,6 +254,7 @@ public class CreateLevel {
         return 0;
     }
 
+    // Returns how many wall chunks are needed.
     int getNumberOfWallChunks() {
         switch (_mapSize) {
             case Enums.MapSize.EXTRA_SMALL:
@@ -172,22 +265,22 @@ public class CreateLevel {
                         return Constants.MapSizeConstants.Dimensions_ExtraSmall.Vertical.Y * 2 + Constants.MapSizeConstants.Dimensions_ExtraSmall.Vertical.X;
                 }
                 break;
-            //case Enums.MapSize.SMALL:
-            //    switch (_mapOrientation) {
-            //        case Enums.MapOrientation.Horizontal:
-            //            break;
-            //        case Enums.MapOrientation.Horizontal:
-            //            break;
-            //    }
-            //    break;
-            //case Enums.MapSize.MEDIUM:
-            //    switch (_mapOrientation) {
-            //        case Enums.MapOrientation.Horizontal:
-            //            break;
-            //        case Enums.MapOrientation.Horizontal:
-            //            break;
-            //    }
-            //    break;
+            case Enums.MapSize.SMALL:
+                switch (_mapOrientation) {
+                    case Enums.MapOrientation.Horizontal:
+                        return Constants.MapSizeConstants.Dimensions_Small.Horizontal.Y * 2 + Constants.MapSizeConstants.Dimensions_Small.Horizontal.X;
+                    case Enums.MapOrientation.Vertical:
+                        return Constants.MapSizeConstants.Dimensions_Small.Vertical.Y * 2 + Constants.MapSizeConstants.Dimensions_Small.Vertical.X;
+                }
+                break;
+            case Enums.MapSize.MEDIUM:
+                switch (_mapOrientation) {
+                    case Enums.MapOrientation.Horizontal:
+                        return Constants.MapSizeConstants.Dimensions_Medium.Horizontal.Y * 2 + Constants.MapSizeConstants.Dimensions_Medium.Horizontal.X;
+                    case Enums.MapOrientation.Vertical:
+                        return Constants.MapSizeConstants.Dimensions_Medium.Vertical.Y * 2 + Constants.MapSizeConstants.Dimensions_Medium.Vertical.X;
+                }
+                break;
             default:
                 return -1;
         }

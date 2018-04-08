@@ -111,7 +111,7 @@ MonoBehaviour:
   m_MinSize: {x: 815, y: 492}
   m_MaxSize: {x: 22010, y: 14042}
   vertical: 0
-  controlID: 56
+  controlID: 11
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -295,7 +295,7 @@ MonoBehaviour:
     height: 927
   m_MaximizeOnPlay: 0
   m_Gizmos: 0
-  m_Stats: 0
+  m_Stats: 1
   m_SelectedSizes: 04000000060000000000000000000000000000000000000000000000000000000000000000000000
   m_TargetDisplay: 0
   m_ZoomArea:
@@ -396,14 +396,14 @@ MonoBehaviour:
     width: 887
     height: 927
   m_SceneLighting: 1
-  lastFramingTime: 3984.8584572621467
+  lastFramingTime: 16947.231564654932
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 22.874083, y: 23.20675, z: 0}
+    m_Target: {x: 16.481075, y: 2.9874277, z: 0}
     speed: 2
-    m_Value: {x: 22.874083, y: 23.20675, z: 0}
+    m_Value: {x: 16.481075, y: 2.9874277, z: 0}
   m_RenderMode: 2
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -430,9 +430,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 42.1872
+    m_Target: 29.167183
     speed: 2
-    m_Value: 42.1872
+    m_Value: 29.167183
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -544,9 +544,9 @@ MonoBehaviour:
     height: 468
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: 78250000
     m_LastClickedID: 0
-    m_ExpandedIDs: e0fbffff00000000
+    m_ExpandedIDs: 328ce8ff201af7ffc491f8ff2e46f9ff3c57ffffe0fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -606,7 +606,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts
+    - Assets/_scenes
   m_ViewMode: 0
   m_StartGridSize: 44
   m_LastFolders: []
@@ -642,24 +642,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 928}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f22400003e250000422500007a250000e6250000262600003a26000042260000
+    m_ExpandedIDs: 00000000f22400003e250000422500007a250000e6250000262600003a260000422600000c280000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: 2DLevelScene
+      m_OriginalName: 2DLevelScene
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 9508
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
